@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lehenga Collection</title>
+    <title>HANUT Collection</title>
     
     <style>
         body {
@@ -90,13 +90,13 @@
             cursor: pointer;
             color: #333;
         }
-        .Lehenga-gallery {
+        .HANUT-gallery {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             padding: 20px;
         }
-        .Lehenga-item {
+        .HANUT-item {
             position: relative;
             width: 22%;
             margin-bottom: 30px;
@@ -106,21 +106,21 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
         }
-        .Lehenga-item:hover {
+        .HANUT-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-        .Lehenga-item img {
+        .HANUT-item img {
             width: 100%;
             height: auto;
             border-radius: 10px 10px 0 0;
             transition: transform 0.3s ease;
         }
-        .Lehenga-item:hover img {
+        .HANUT-item:hover img {
             transform: scale(1.05);
         }
-        .Lehenga-item:hover .see-more-btn,
-        .Lehenga-item:hover .love-btn {
+        .HANUT-item:hover .see-more-btn,
+        .HANUT-item:hover .love-btn {
             opacity: 1;
         }
         .see-more-btn {
@@ -200,13 +200,13 @@
         background-color: rgb(168, 88, 64);
     }
     @media (max-width: 1200px) {
-    .Lehenga-item {
+    .HANUT-item {
         width: 30%; /* 3 items per row */
     }
 }
 
 @media (max-width: 992px) {
-    .Lehenga-item {
+    .HANUT-item {
         width: 45%; /* 2 items per row */
     }
 
@@ -220,7 +220,7 @@
 }
 
 @media (max-width: 768px) {
-    .Lehenga-item {
+    .HANUT-item {
         width: 48%; /* 2 items per row on tablets */
     }
 
@@ -244,7 +244,7 @@
 }
 
 @media (max-width: 480px) {
-    .Lehenga-item {
+    .HANUT-item {
         width: 100%; /* 1 item per row on mobile */
     }
 
@@ -714,7 +714,7 @@ small{
       <i class="fas fa-bars"></i>
     </label>
     <!-- Site logo -->
-    <label class="logo">LEHENGA</label>
+    <label class="logo">HANUT</label>
     <!-- Navigation links -->
     <ul>
         <li><a class="active" href="{% url 'main_page' %}">Home</a></li>
@@ -745,7 +745,7 @@ small{
           </a>
         </li>   </ul>
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search lehengas..." oninput="filterProducts()">
+            <input type="text" id="searchInput" placeholder="Search HANUTs..." oninput="filterProducts()">
             <button class="filter-button" onclick="toggleSidebar()"><i class="fas fa-filter"></i></button>
 
         </div>
@@ -778,9 +778,9 @@ small{
     <br>
     <br>    
     <section class="showcase-section">
-        <div class="Lehenga-gallery">
+        <div class="HANUT-gallery">
             {% for product in products %}
-            <div class="Lehenga-item" data-price="{{ product.price }}" data-date="{{ product.date_added|date:'Y-m-d' }}">
+            <div class="HANUT-item" data-price="{{ product.price }}" data-date="{{ product.date_added|date:'Y-m-d' }}">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
                 
                 <!-- Love button in form -->
@@ -808,7 +808,7 @@ small{
           <div class="row my-5 justify-content-center py-5">
               <div class="col-11">
                   <div class="row ">
-                      <div class="col-xl-8 col-md-4 col-sm-4 col-12   my-auto mx-auto a"><h3 class="text-muted mb-md-0 mb-5 bold-text">Lehenga.</h3></div>
+                      <div class="col-xl-8 col-md-4 col-sm-4 col-12   my-auto mx-auto a"><h3 class="text-muted mb-md-0 mb-5 bold-text">HANUT.</h3></div>
                       <div class="col-xl-2 col-md-4 col-sm-4 col-12">
                           <h6 class="mb-3 mb-lg-4 bold-text"><b>CONSUMER POLICY</b></h6>
                           <ul class="list-unstyled">
@@ -828,7 +828,7 @@ small{
                               <span class="mx-2"><i class="fab fa-twitter" aria-hidden="true"></i></span>
                               <span class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></span>
                           </p>
-                          <small class="rights"><span>&#174;</span> Lehenga All Rights Reserved.</small>
+                          <small class="rights"><span>&#174;</span> HANUT All Rights Reserved.</small>
                       </div>
                                               <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end "><h6 class="mt-55 mt-2 text-muted bold-text"><b>PH NUMBER</b></h6><small> <span><i class="fa fa-user" aria-hidden="true"></i></span> 9353209536</small></div>
                       <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3   "><h6 class="text-muted bold-text"><b>HANUT PAUL</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> hauntpaul@gmail.com</small></div>
@@ -858,8 +858,8 @@ small{
     const searchQuery = document.getElementById('searchInput').value.toLowerCase();
     const sortOption = document.getElementById('sortProducts').value; // Get selected sorting option
 
-    const products = Array.from(document.querySelectorAll('.Lehenga-item'));
-    const gallery = document.querySelector('.Lehenga-gallery');
+    const products = Array.from(document.querySelectorAll('.HANUT-item'));
+    const gallery = document.querySelector('.HANUT-gallery');
 
     let filteredProducts = products.filter(product => {
         const productPrice = parseFloat(product.getAttribute('data-price'));
